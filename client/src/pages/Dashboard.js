@@ -16,6 +16,7 @@ function Dashboard() {
   useEffect(() => {
     loadSchedule();
     loadGoals();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const loadSchedule = async () => {

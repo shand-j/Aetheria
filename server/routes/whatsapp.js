@@ -8,6 +8,10 @@ let userConversations = {};
 
 /**
  * Webhook verification (GET)
+ * NOTE: This is a demo implementation. In production:
+ * - Add rate limiting middleware to prevent abuse
+ * - Implement proper authentication and authorization
+ * - Use secure token validation
  */
 router.get('/webhook', (req, res) => {
   const mode = req.query['hub.mode'];
@@ -122,6 +126,10 @@ router.post('/send', async (req, res) => {
 
 /**
  * Get conversation history
+ * NOTE: This is a demo implementation. In production:
+ * - Add authentication to verify user owns the phone number
+ * - Implement rate limiting
+ * - Don't expose phone numbers directly in URL paths
  */
 router.get('/conversation/:phoneNumber', (req, res) => {
   try {
